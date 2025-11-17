@@ -1,29 +1,114 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My First Website</title>
-  <link rel="stylesheet" href="styles/style.css" />
-</head>
-<body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p class="subtitle">Hosted with GitHub Pages</p>
-  </header>
+:root{
+  --bg: #0f1720;
+  --card: #0b1220;
+  --surface: #0b1220;
+  --text: #e6eef8;
+  --muted: #9fb0c8;
+  --accent: #6bb8a8;
+  --accent-2: #4e8be4;
+  --glass: rgba(255,255,255,0.04);
+  --radius: 12px;
+  --max: 1100px;
+  --gap: 1.25rem;
+  --shadow: 0 8px 30px rgba(2,6,23,0.5);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>This is a tiny static site starter. Edit the files and push to GitHub.</p>
-      <button id="clickMe">Click me</button>
-    </section>
-  </main>
+/* Light theme overrides — `.light` on body */
+body.light {
+  --bg: #fbfcfe;
+  --card: #ffffff;
+  --surface: #ffffff;
+  --text: #0b1220;
+  --muted: #556b7a;
+  --accent: #177a6b;
+  --accent-2: #276fe0;
+  --glass: rgba(2,6,23,0.03);
+  --shadow: 0 10px 30px rgba(14,20,30,0.06);
+}
 
-  <footer>
-    <p>© <span id="year"></span> Your Name</p>
-  </footer>
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),var(--bg));
+  color:var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background .28s ease,color .28s ease;
+}
 
-  <script src="scripts/main.js"></script>
-</body>
-</html>
+/* layout helpers */
+.container{max-width:var(--max);margin:0 auto;padding:1.25rem}
+.header-grid{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--text);text-decoration:none}
+.brand svg{border-radius:8px}
+.brand-text{font-weight:700;letter-spacing:0.2px}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:.25rem .5rem;border-radius:8px;font-weight:600}
+.nav a:hover{color:var(--text)}
+.btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;border:0;text-decoration:none;font-weight:700;cursor:pointer;background:transparent;color:var(--text);transition:transform .12s ease}
+.btn.small{padding:.45rem .6rem;font-weight:600}
+.btn.ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));box-shadow:0 6px 18px rgba(12,20,40,0.15);color:white}
+.btn.block{display:block;width:100%;text-align:center}
+
+/* header */
+.site-header{position:sticky;top:0;backdrop-filter:blur(6px);z-index:40;padding:.6rem 0;background:linear-gradient(180deg,rgba(0,0,0,0.06),transparent)}
+.site-header .container{display:flex;align-items:center}
+
+/* theme toggle */
+.theme-toggle{background:var(--glass);border-radius:999px;padding:.45rem .6rem;border:0;display:flex;align-items:center;gap:.45rem}
+.theme-toggle .sun,.theme-toggle .moon{font-size:14px;opacity:.9}
+
+/* hero */
+.hero{padding:3.5rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr 360px;gap:2rem;align-items:center}
+.hero-copy h1{font-size:2rem;margin:0 0 .6rem}
+.lead{color:var(--muted);margin:0 0 1rem}
+.hero-cta{display:flex;gap:.75rem;align-items:center}
+
+/* hero card */
+.hero-card{background:var(--card);border-radius:var(--radius);padding:1rem;box-shadow:var(--shadow);min-height:140px;display:flex;flex-direction:column;justify-content:space-between}
+.card-top{font-size:0.92rem;color:var(--muted)}
+.card-body{margin:.6rem 0;color:var(--text)}
+.card-foot{display:flex;justify-content:flex-end}
+
+/* sections */
+.section{padding:2.5rem 0}
+.section-title{font-size:1.25rem;margin:0 0 .35rem}
+.section-sub{color:var(--muted);margin:0 0 1.25rem}
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.service{background:var(--surface);padding:1rem;border-radius:10px;box-shadow:var(--glass);min-height:120px}
+.muted{opacity:0.98;background:transparent}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:1rem;align-items:start}
+.about-cta{background:var(--card);padding:1rem;border-radius:10px;box-shadow:var(--shadow)}
+
+/* testimonials */
+.testimonials{display:grid;gap:0.75rem}
+.testimonials blockquote{margin:0;padding:1rem;border-left:3px solid var(--accent);background:var(--surface);border-radius:8px}
+.testimonials cite{display:block;margin-top:.6rem;color:var(--muted);font-size:.9rem}
+
+/* final CTA */
+.final-cta{padding:2rem 0}
+
+/* footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:1rem 0;margin-top:2rem}
+.footer-grid{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+
+/* responsiveness */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:1rem}
+  .cards-grid{grid-template-columns:1fr;grid-auto-rows:1fr}
+  .about-grid{grid-template-columns:1fr}
+  .nav{display:none}
+  .container{padding:1rem}
+}
+
+/* small tweaks */
+.large{padding:0.9rem 1.2rem;font-size:1.05rem}
