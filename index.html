@@ -3,25 +3,139 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>My First Website</title>
+  <title>Uplyftt — Coaching & NLP Training</title>
+  <meta name="description" content="Uplyftt — Practical NLP coaching, life skills and student transformation workshops." />
   <link rel="stylesheet" href="styles/style.css" />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 </head>
-<body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p class="subtitle">Hosted with GitHub Pages</p>
+<body class="theme">
+  <header class="site-header">
+    <div class="container header-grid">
+      <a class="brand" href="#" aria-label="Uplyftt home">
+        <svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="10" fill="var(--accent)" />
+          <path d="M7 13c1.5-2 3.5-3 5-3s3.5 1 5 3" stroke="var(--bg)" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-text">Uplyftt</span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact" class="btn small">Contact</a>
+      </nav>
+
+      <button id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Toggle theme">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </button>
+    </div>
   </header>
 
   <main>
-    <section>
-      <h2>About</h2>
-      <p>This is a tiny static site starter. Edit the files and push to GitHub.</p>
-      <button id="clickMe">Click me</button>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Clarity • Confidence • Consistent Action</h1>
+          <p class="lead">Practical NLP coaching and workshops that help students and professionals break patterns, focus clearly and move toward meaningful goals.</p>
+          <div class="hero-cta">
+            <a href="#contact" class="btn primary">Book a free consult</a>
+            <a href="#services" class="btn ghost">See services</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="card-top">
+            <p><strong>Next cohort:</strong> Starts Jun 15</p>
+          </div>
+          <div class="card-body">
+            <p>6-week NLP -> Practical tools, weekly live sessions, assignments & one-to-one coaching.</p>
+          </div>
+          <div class="card-foot">
+            <a href="#contact" class="btn small">Join waitlist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">What I offer</h2>
+        <p class="section-sub">Short, practice-first programs for clear, measurable progress.</p>
+
+        <div class="cards-grid">
+          <article class="service">
+            <h3>Student Transformation</h3>
+            <p>Focus, study flow, goal setting and habit design — classroom-ready activities & two-hour workshops.</p>
+          </article>
+
+          <article class="service">
+            <h3>1:1 Coaching</h3>
+            <p>Personal NLP-based coaching for clarity, confidence and stopping self-sabotage.</p>
+          </article>
+
+          <article class="service">
+            <h3>Trainer Training</h3>
+            <p>Design and run experiential workshops — curriculum, activities, and facilitation skills.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section muted">
+      <div class="container about-grid">
+        <div>
+          <h2>About Uplyftt</h2>
+          <p>Uplyftt is run by an NLP-certified coach who blends neuroscience-backed techniques with practical training. We focus on simple, repeatable tools that work in classrooms, teams and daily life.</p>
+          <ul class="bullets">
+            <li>Short-term measurable improvements</li>
+            <li>Hands-on activities and homework</li>
+            <li>Follow-up & accountability</li>
+          </ul>
+        </div>
+        <aside class="about-cta">
+          <h3>Ready to transform?</h3>
+          <p>Schedule a free 20-minute clarity call and get a customised plan.</p>
+          <a id="contact" href="#contact" class="btn primary block">Book call</a>
+        </aside>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <h2 class="section-title">What learners say</h2>
+        <div class="testimonials">
+          <blockquote>
+            “Uplyftt’s workshop changed how I plan my study — my marks and confidence both improved.” <cite>— A. Mehta, Student</cite>
+          </blockquote>
+          <blockquote>
+            “Practical, direct and compassionate coaching.” <cite>— R. Nair, Parent</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta section muted">
+      <div class="container cta-grid">
+        <div>
+          <h2>Start your journey</h2>
+          <p>Free consult, personalised plan, clear next steps.</p>
+        </div>
+        <div>
+          <a href="#contact" class="btn primary large">Book my free consult</a>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>© <span id="year"></span> Your Name</p>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year"></span> Uplyftt. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
   </footer>
 
   <script src="scripts/main.js"></script>
