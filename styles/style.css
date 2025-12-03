@@ -112,3 +112,8 @@ body{
 
 /* small tweaks */
 .large{padding:0.9rem 1.2rem;font-size:1.05rem}
+/* About page small additions */
+.profile-card img{border-radius:12px;width:100%;height:auto;display:block}
+.bullets{list-style:disc;margin-left:1rem;padding-left:1rem;color:var(--muted)}
+.service h4{margin:0 0 .4rem}
+
