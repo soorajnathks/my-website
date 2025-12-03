@@ -43,11 +43,23 @@ body{
 
 /* layout helpers */
 .container{max-width:var(--max);margin:0 auto;padding:1.25rem}
-.header-grid{display:flex;align-items:center;gap:1rem;justify-content:space-between}
+.header-grid {
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  justify-content:flex-start;
+}
+
 .brand{display:flex;align-items:center;gap:.6rem;color:var(--text);text-decoration:none}
 .brand svg{border-radius:8px}
 .brand-text{font-weight:700;letter-spacing:0.2px}
-.nav{display:flex;gap:1rem;align-items:center}
+.nav {
+  margin-left:1rem;
+  display:flex;
+  gap:1rem;
+  align-items:center;
+}
+
 .nav a{color:var(--muted);text-decoration:none;padding:.25rem .5rem;border-radius:8px;font-weight:600}
 .nav a:hover{color:var(--text)}
 .btn{display:inline-block;padding:.6rem .9rem;border-radius:10px;border:0;text-decoration:none;font-weight:700;cursor:pointer;background:transparent;color:var(--text);transition:transform .12s ease}
